@@ -61,4 +61,9 @@ public class Alunos {
     public void setTurma(String turma) {
         this.turma = turma;
     }
+
+    @Override
+    public String toString() {
+        return "ALUNOS [idAluno = "+idAluno+" ,Nome = "+nome+" ,Curso = "+curso+" , Turma = "+turma+"   ]";
+    }
 }

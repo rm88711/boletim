@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+</head>
+<body>
+    <h1>Alunos</h1>
+    <div class="card" th:each="aluno : ${alunos}" >
+        <h2 th:text="${aluno.nome}"></h2>
+        <span>Curso: </span>
+        <span th:text="${aluno.curso}"></span>
+        <span>Turma: </span>
+        <span th:text="${aluno.turma}"></span>
+    </div>
+  <!---   <p th:text="${alunos}"></p> -->
+</body>
+</html>

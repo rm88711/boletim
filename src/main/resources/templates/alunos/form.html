@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{~/css/global.css}">
+    <style type="text/css"></style>
+    <style>
+        h1 {
+            color: red;
+            padding: 60px;
+        }
+
+        .textinho {
+            color: white;
+            padding: 10px 30px;
+        }
+
+        .textinhoUltimo {
+            color: white;
+            padding: 10px 30px 30px 30px;
+        }
+
+        .put {
+            width: 250px;
+        }
+
+        #laNome {
+            color: green;
+        }
+
+        .titulo {
+            padding: 20px 60px;
+        }
+    
+        .caixa{
+            display: flex;
+        }
+    </style>
+    <title>Alunos new</title>
+</head>
+
+<body>
+    <h1>Alunos</h1>
+    <main class="container">
+        <div class="card">
+            <h2 class="titulo">Cadastrar</h2>
+            <form action="/alunos" method="POST">
+                <div class="cadastroAluno">
+                    <div class="textinho">
+                        <label for="nome">Nome : </label>
+                        <input class="put" type="text" name="nome" id="nome" placeholder="Nome do aluno">
+                    </div>
+                    <div class="textinho">
+                        <label for="curso">Curso : </label>
+                        <input class="put" type="text" name="curso" id="curso" placeholder="Curso do aluno">
+                    </div>
+                    <div class="textinhoUltimo">
+                        <label for="turma">Turma : </label>
+                        <input class="put" type="text" name="turma" id="turma" placeholder="Turma do aluno">
+                    </div>
+                </div>
+                <div class="buttons" >
+                    <a href="/alunos" class="button cancel">Cancelar</a>
+                    <input type="submit" value="salvar" class="button">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
