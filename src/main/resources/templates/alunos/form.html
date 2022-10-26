@@ -47,7 +47,8 @@
     <main class="container">
         <div class="card">
             <h2 class="titulo">Cadastrar</h2>
-            <form action="/alunos" method="POST">
+            <form action="/alunos" method="POST" th:object="${alunos}">
+                <input class="hide" th:field="*{idAluno}" id="idAluno">
                 <div class="cadastroAluno">
                     <div class="textinho">
                         <div><label for="nome">Nome : </label></div>

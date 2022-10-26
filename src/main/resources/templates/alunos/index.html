@@ -74,9 +74,11 @@
             <a th:href="${'/alunos/delete/'+aluno.idAluno}">
                 <span class="textomedio material-icons">delete</span>
             </a>
+            <a th:href="${'/alunos/' + aluno.idAluno}"> 
+                <span class="material-icons">edit</span>
+            </a>
         </div>
     </div>
-    <!---   <p th:text="${alunos}"></p> -->
 </body>
 
 </html>
