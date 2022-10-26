@@ -33,7 +33,7 @@ body{
 
 h1{
     font-size: 2.4rem;
-    margin: 1rem;
+    
 }
 
 h2{
@@ -114,6 +114,20 @@ a{
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    height: 250px;
+    margin: 2rem;
+    background: var(--bg-grad);
+    border: 1px solid #333333;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.card2{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
     height: 250px;
     margin: 2rem;
     background: var(--bg-grad);

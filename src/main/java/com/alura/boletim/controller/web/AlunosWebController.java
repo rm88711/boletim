@@ -5,9 +5,11 @@ import com.alura.boletim.services.AlunosServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/alunos")
@@ -28,8 +30,16 @@ public class AlunosWebController {
     }
 
     @PostMapping
-    public String create(Alunos alunos){
+    public String create(Alunos alunos, RedirectAttributes redirect){
         services.save(alunos);
+        redirect.addFlashAttribute("message","Cadastro Realizado");
+        return "redirect:/alunos";
+    }
+
+    @GetMapping("delete/{id}")
+    public String delete(@PathVariable Long id, RedirectAttributes redirect){
+        services.deleteById(id);
+        redirect.addFlashAttribute("message","Aluno apagado com sucesso");
         return "redirect:/alunos";
     }
 

@@ -1,20 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{~/css/global.css}">
+    <style type="text/css"></style>
+    <style>
+        h1 {
+            color: red;
+            padding: 60px;
+        }
+
+        .textinho {
+            color: white;
+            padding: 10px 30px;
+        }
+
+        .textinhoUltimo {
+            color: white;
+            padding: 10px 30px 30px 30px;
+        }
+
+        .put {
+            width: 250px;
+        }
+
+        #laNome {
+            color: green;
+        }
+
+        .titulo {
+            padding: 20px 60px;
+        }
+
+        .textomaior {
+            font-size: 30px;
+            padding-left: 10px;
+        }
+
+        .textomedio {
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        .textomenor {
+            font-size: 15px;
+            padding-left: 20px;
+        }
+    </style>
     <title>Alunos</title>
 </head>
+
 <body>
-    <h1>Alunos</h1>
-    <div class="card" th:each="aluno : ${alunos}" >
-        <h2 th:text="${aluno.nome}"></h2>
-        <span>Curso: </span>
-        <span th:text="${aluno.curso}"></span>
-        <span>Turma: </span>
-        <span th:text="${aluno.turma}"></span>
+    <h1>Boletim</h1>
+    <nav th:replace="_template :: menu('alunos')"></nav>
+    <div class="toolbar">
+        <a class="button" href="/alunos/new" sec:authorize-url="POST /alunos">Novo Aluno</a>
     </div>
-  <!---   <p th:text="${alunos}"></p> -->
+
+    <div th:if="${message != null}" class="alert success">
+        <!--<div class="alert success">-->
+        <!--<span class="textomenor">Cadastro Realizado</span>-->
+        <span th:text="${message}"></span>
+    </div>
+
+    <div class="card2" th:each="aluno : ${alunos}">
+        <h2 class="textomaior" th:text="${'Nome : '+aluno.nome}"></h2>
+        <span class="textomedio" th:text="${'CURSO: '+ aluno.curso}"></span>
+        <span class="textomedio" th:text="${'TURMA: ' + aluno.turma}"></span>
+        <div class="actions">
+            <a th:href="${'/alunos/delete/'+aluno.idAluno}">
+                <span class="textomedio material-icons">delete</span>
+            </a>
+        </div>
+    </div>
+    <!---   <p th:text="${alunos}"></p> -->
 </body>
+
 </html>

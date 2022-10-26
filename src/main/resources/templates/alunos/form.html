@@ -43,22 +43,23 @@
 
 <body>
     <h1>Alunos</h1>
+    <nav th:replace="_template :: menu('alunos')"></nav>
     <main class="container">
         <div class="card">
             <h2 class="titulo">Cadastrar</h2>
             <form action="/alunos" method="POST">
                 <div class="cadastroAluno">
                     <div class="textinho">
-                        <label for="nome">Nome : </label>
+                        <div><label for="nome">Nome : </label></div>
                         <input class="put" type="text" name="nome" id="nome" placeholder="Nome do aluno">
                     </div>
                     <div class="textinho">
-                        <label for="curso">Curso : </label>
+                        <div><label for="curso">Curso : </label></div>
                         <input class="put" type="text" name="curso" id="curso" placeholder="Curso do aluno">
                     </div>
                     <div class="textinhoUltimo">
-                        <label for="turma">Turma : </label>
-                        <input class="put" type="text" name="turma" id="turma" placeholder="Turma do aluno">
+                        <div><label for="turma">Turma : </label></div>
+                        <input  SIZE=10 MAXLENGTH=10 class="put" type="text" name="turma" id="turma" placeholder="Turma do aluno">
                     </div>
                 </div>
                 <div class="buttons" >
