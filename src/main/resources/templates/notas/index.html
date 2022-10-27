@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{~/css/global.css}">
+    <style type="text/css"></style>
+    <style>
+        h1 {
+            color: red;
+            padding: 60px;
+        }
+
+        .textinho {
+            color: white;
+            padding: 10px 30px;
+        }
+
+        .textinhoUltimo {
+            color: white;
+            padding: 10px 30px 30px 30px;
+        }
+
+        .put {
+            width: 250px;
+        }
+
+        #laNome {
+            color: green;
+        }
+
+        .titulo {
+            padding: 20px 60px;
+        }
+
+        .textomaior {
+            font-size: 30px;
+            padding-left: 10px;
+        }
+
+        .textomedio {
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        .textomenor {
+            font-size: 15px;
+            padding-left: 20px;
+        }
+    </style>
+<title>Notas</title>
+</head>
+<body>
+    <h1>Notas</h1>
+    <nav th:replace="_template :: menu('notas')"></nav>
+    <div class="card2" th:each="nota : ${notas}">
+        <h2 class="textomaior" th:text="${nota.materia}"></h2>
+    </div>
+</body>
+</html>

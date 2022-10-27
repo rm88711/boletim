@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +20,10 @@ public class NotasService {
         return notasRepository.findAll(paginacao);
     }
 
+    public List<Notas> listAll(){
+
+        return notasRepository.findAll();
+    }
     public void save(Notas notas){
         notasRepository.save(notas);
     }

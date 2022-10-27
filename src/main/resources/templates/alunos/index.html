@@ -55,6 +55,7 @@
 
 <body>
     <h1>Boletim</h1>
+    <span class="material-icons">logout</span>
     <nav th:replace="_template :: menu('alunos')"></nav>
     <div class="toolbar">
         <a class="button" href="/alunos/new" sec:authorize-url="POST /alunos">Novo Aluno</a>
@@ -76,6 +77,9 @@
             </a>
             <a th:href="${'/alunos/' + aluno.idAluno}"> 
                 <span class="material-icons">edit</span>
+            </a>
+            <a th:href="${'/notas/' + aluno.idAluno}"> 
+                <span class="material-icons">filter_9_plus</span>
             </a>
         </div>
     </div>
