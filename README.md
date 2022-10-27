@@ -2,6 +2,29 @@
 
 
 
+Verificar o status do Jenkins :
+
+```
+
+systemctl status jenkins
+
+```
+
+Parar o Jenkins :
+
+```
+
+sudo systemctl stop jenkins 
+
+```
+
+Iniciar o Jenkins :
+
+```
+
+sudo systemctl start jenkins 
+
+```
 
 * Pipeline Jenkins :
 
